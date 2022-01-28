@@ -1,6 +1,27 @@
-<a-entity position="0 0 -1" scale="3 3 3" text="value: 1; size: 50; color: black; align: center; wrapCount: 40">
-    <a-box geometry="primitive: sphere; radius: 0.5" material="color: blue; shader: flat;" position="0 0 -5"
-      event-set__enter="_event: mouseenter; color: green; visible: true"
+<!--Basic Hotspot
+    Hotspot with a sphere with numbered text in center.
+    Nested child plane object which 'should' auto scale to the amount of text required.
+
+    Values to concern yourself with:
+        parent entity:
+            id must be unique.
+            position
+            scale
+            text value (number for flow of interaction)
+        box entity with id="textbox"
+            y position
+            geometry width/height: you can play around with this if needs be
+            text width
+            text value (interaction details)
+            text wrap value (character limit until it moves text on to a new line)
+-->
+<a-entity id="hotspot1" position="0 0 -1" scale="3 3 3" text="value: 1; color: black; align: center; wrapCount: 40">
+    <a-box show-interaction-info-on-hover="color: red" geometry="primitive: sphere; radius: 0.5"
+      material="color: blue; shader: flat;" position="0 0 -5" event-set__enter="_event: mouseenter; color: lightblue;"
       event-set__leave="_event: mouseleave; color: blue">
+      <a-box id="textbox" position="0 1.5 0" visible="false"
+        geometry="primitive: plane; width: auto; height: auto" material="color: blue; shader: flat;"
+        text="width: 4; value: This is some interaction information; color: black; align: center; wrapCount: 10">
+      </a-box>
     </a-box>
   </a-entity>
