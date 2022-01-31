@@ -41,7 +41,7 @@
   <!--Basic Scene Setup-->
   <a-scene background="transparent:true">
     <a-assets>
-      <img id="VR_Wireframe" src="../wireframes\XR Wireframe Template.png">
+      <img id="VR_Wireframe" src="../wireframes\XR Wireframe_Triage01.png">
     </a-assets>
     <a-sky src="#VR_Wireframe" rotation="0 270 0"></a-sky>
 
@@ -51,7 +51,16 @@
     </a-camera>
 
     <!--Hotspots-->
-    
+    <a-entity id="hotspot1" position="0 0 -1" scale="3 3 3" text="value: 1; color: black; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: red" geometry="primitive: sphere; radius: 0.5"
+        material="color: blue; shader: flat;" position="0 0 -5" event-set__enter="_event: mouseenter; color: lightblue;"
+        event-set__leave="_event: mouseleave; color: blue">
+        <a-box id="textbox" position="0 1.5 0" visible="false"
+          geometry="primitive: plane; width: auto; height: auto" material="color: blue; shader: flat;"
+          text="width: 4; value: This is some interaction information; color: black; align: center; wrapCount: 10">
+        </a-box>
+      </a-box>
+    </a-entity>
   </a-scene>
 </body>
 
