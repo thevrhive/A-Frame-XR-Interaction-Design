@@ -23,16 +23,17 @@
         var data = this.data;
         var el = this.el;
         var defaultColor = el.getAttribute('material').color;
-        var textBox = el.querySelector('textbox');;
+        var box = el.querySelector('*');;
 
         el.addEventListener('mouseenter', function () {
           el.setAttribute('color', data.color);
-          textbox.object3D.visible = true;
+          box.object3D.visible = true;
+          console.log("Entity: " + el);
         });
 
         el.addEventListener('mouseleave', function () {
           el.setAttribute('color', defaultColor);
-          textbox.object3D.visible = false;
+          box.object3D.visible = false;
         });
       }
     });
@@ -51,8 +52,16 @@
     </a-camera>
 
     <!--Hotspots-->
-    
-  </a-scene>
-</body>
+    <a-entity id="hotspot1" position="0 0 -1" scale="3 3 3" text="value: 1; color: black; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: red" geometry="primitive: sphere; radius: 0.5"
+          material="color: blue; shader: flat;" position="0 0 -5" event-set__enter="_event: mouseenter; color: lightblue;"
+          event-set__leave="_event: mouseleave; color: blue">
+        <a-box position="0 1.5 0" visible="false"
+            geometry="primitive: plane; width: auto; height: auto" material="color: blue; shader: flat;"
+            text="width: 4; value: This is some interaction information; color: black; align: center; wrapCount: 10">
+        </a-box>
+      </a-box>
+    </a-entity>
 
+</body>
 </html>
