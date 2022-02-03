@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>XR Interaction Design Wireframe</title>
+  <meta name="description" content="360&deg; Image - A-Frame">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+</head>
+
+<body>
+  <!--Component Setup-->
+  <script>
+    AFRAME.registerComponent('show-interaction-info-on-hover', {
+      schema: {
+        color: {
+          default: 'blue'
+        }
+      },
+
+      init: function () {
+        var self = this;
+        var scene = self.el.sceneEl;
+        var el = this.el;
+        var data = this.data;
+        var defaultColor = "blue";//el.getAttribute('material').color;
+        var box = el.querySelector('*');
+        var raycaster = scene.querySelector('a-cursor').components.raycaster;
+
+        el.addEventListener('mouseenter', function () {
+          el.setAttribute('color', data.color);
+          box.object3D.visible = true;
+          box.object3D.opacity = "1";
+        });
+
+        el.addEventListener('mouseleave', function () {
+          el.setAttribute('color', defaultColor);
+          box.object3D.visible = false;
+          box.object3D.opacity = "0";
+        });
+      }
+    });
+  </script>
+
+  <!--Basic Scene Setup-->
+  <a-scene background="transparent:true">
+    <a-assets>
+      <img id="VR_Wireframe" src="../wireframes\XR Wireframe_DiegeticConversations01.png">
+    </a-assets>
+    <a-sky src="#VR_Wireframe" rotation="0 270 0"></a-sky>
+
+    <!--Camera/Cursor-->
+    <a-camera position="0 0 0" fov="90">
+      <a-cursor raycaster="objects: [data-hoverable];"></a-cursor>
+    </a-camera>
+
+    <!--Hotspots-->
+
+    </a-entity><a-entity id="hotspotNorth" position="0 -1.5 8" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: red" position="0 0 5" rotation="0 180 0" geometry="primitive: sphere; radius: 0.1"
+          material="color: orange; shader: flat;" event-set__enter="_event: mouseenter; color: lightorange;"
+          event-set__leave="_event: mouseleave; color: orange" data-hoverable>
+        <a-box position="0 0.66 0" rotation="0 0 0" visible="false"
+            geometry="primitive: plane; width: auto; height: auto" material="color: orange; shader: flat;"
+            text="width: 2; value: Talk to patient; color: white; align: center; wrapCount: 10; zOffset:0.2;">
+        </a-box>
+      </a-box>
+    </a-entity>
+
+    <a-entity id="hotspotWest" position="3.5 -6.5 10" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: blue" position="0 0 5" rotation="0  0" geometry="primitive: sphere; radius: 0.1"
+          material="color: blue; shader: flat;" event-set__enter="_event: mouseenter; color: lightblue;"
+          event-set__leave="_event: mouseleave; color: blue" data-hoverable>
+        <a-box position="0 -0.66 0" rotation="-60 135 0" visible="false"
+            geometry="primitive: plane; width: auto; height: auto" material="color: blue; shader: flat;"
+            text="width: 2; value: Clean up; color: white; align: center; wrapCount: 10; zOffset:0.2;">
+        </a-box>
+      </a-box>
+    </a-entity>
+
+    <a-entity id="hotspotNorthWest" position="10 -2 16" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: blue" position="0 0 5" rotation="0  0" geometry="primitive: sphere; radius: 0.1"
+          material="color: red; shader: flat;" event-set__enter="_event: mouseenter; color: pink;"
+          event-set__leave="_event: mouseleave; color: red" data-hoverable>
+        <a-box position="0 0.66 0" rotation="0 90 0" visible="false"
+            geometry="primitive: plane; width: auto; height: auto" material="color: red; shader: flat;"
+            text="width: 2; value: Exit; color: white; align: center; wrapCount: 10; zOffset:0.2;">
+        </a-box>
+      </a-box>
+    </a-entity>
+
+    <a-entity id="hotspotSouthWest" position="5 -5 10" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: green" position="0 0 5" rotation="0  0" geometry="primitive: sphere; radius: 0.1"
+          material="color: green; shader: flat;" event-set__enter="_event: mouseenter; color: lightgreen;"
+          event-set__leave="_event: mouseleave; color: green" data-hoverable>
+        <a-box position="0 0.66 0" rotation="-30 135 0" visible="false"
+            geometry="primitive: plane; width: auto; height: auto" material="color: green; shader: flat;"
+            text="width: 2; value: Close bag; color: white; align: center; wrapCount: 10; zOffset:0.2;">
+        </a-box>
+      </a-box>
+    </a-entity>
+
+</body>
+</html>
