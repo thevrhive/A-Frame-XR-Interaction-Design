@@ -11,6 +11,7 @@ Here are the related files for each of the prototype interaction wireframes
 #### Holistic Assessment
 
 #### Environment Assessment
+- XR Wireframe_EnvironmentAssessment.png
 
 #### Wound Assessment
 
