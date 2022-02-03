@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>XR Interaction Design Wireframe</title>
+  <meta name="description" content="360&deg; Image - A-Frame">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+</head>
+
+<body>
+  <!--Component Setup-->
+  <script>
+    AFRAME.registerComponent('show-interaction-info-on-hover', {
+      schema: {
+        color: {
+          default: 'blue'
+        }
+      },
+
+      init: function () {
+        var self = this;
+        var scene = self.el.sceneEl;
+        var el = this.el;
+        var data = this.data;
+        var defaultColor = "blue";//el.getAttribute('material').color;
+        var box = el.querySelector('*');
+        var raycaster = scene.querySelector('a-cursor').components.raycaster;
+
+        el.addEventListener('mouseenter', function () {
+          el.setAttribute('color', data.color);
+          box.object3D.visible = true;
+          box.object3D.opacity = "1";
+        });
+
+        el.addEventListener('mouseleave', function () {
+          el.setAttribute('color', defaultColor);
+          box.object3D.visible = false;
+          box.object3D.opacity = "0";
+        });
+      }
+    });
+  </script>
+
+  <!--Basic Scene Setup-->
+  <a-scene background="transparent:true">
+    <a-assets>
+      <img id="VR_Wireframe" src="../wireframes\XR Wireframe_WoundTreatment.png">
+    </a-assets>
+    <a-sky src="#VR_Wireframe" rotation="0 270 0"></a-sky>
+
+    <!--Camera/Cursor-->
+    <a-camera position="0 0 0" fov="90">
+        <a-cursor raycaster="objects: [data-hoverable];"></a-cursor>
+    </a-camera>
+
+    <!--Hotspots-->
+
+</body>
+</html>

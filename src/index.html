@@ -20,20 +20,24 @@
       },
 
       init: function () {
-        var data = this.data;
+        var self = this;
+        var scene = self.el.sceneEl;
         var el = this.el;
-        var defaultColor = el.getAttribute('material').color;
-        var box = el.querySelector('*');;
+        var data = this.data;
+        var defaultColor = "blue";//el.getAttribute('material').color;
+        var box = el.querySelector('*');
+        var raycaster = scene.querySelector('a-cursor').components.raycaster;
 
         el.addEventListener('mouseenter', function () {
           el.setAttribute('color', data.color);
           box.object3D.visible = true;
-          console.log("Entity: " + el);
+          box.object3D.opacity = "1";
         });
 
         el.addEventListener('mouseleave', function () {
           el.setAttribute('color', defaultColor);
           box.object3D.visible = false;
+          box.object3D.opacity = "0";
         });
       }
     });
@@ -48,14 +52,14 @@
 
     <!--Camera/Cursor-->
     <a-camera position="0 0 0" fov="90">
-      <a-cursor></a-cursor>
+      <a-cursor raycaster="objects: [data-hoverable];"></a-cursor>
     </a-camera>
 
     <!--Hotspots-->
     <a-entity id="hotspot1" position="0 0 -1" scale="3 3 3" text="value: 1; color: black; align: center; wrapCount: 40">
       <a-box show-interaction-info-on-hover="color: red" geometry="primitive: sphere; radius: 0.5"
           material="color: blue; shader: flat;" position="0 0 -5" event-set__enter="_event: mouseenter; color: lightblue;"
-          event-set__leave="_event: mouseleave; color: blue">
+          event-set__leave="_event: mouseleave; color: blue" data-hoverable>
         <a-box position="0 1.5 0" visible="false"
             geometry="primitive: plane; width: auto; height: auto" material="color: blue; shader: flat;"
             text="width: 4; value: This is some interaction information; color: black; align: center; wrapCount: 10">

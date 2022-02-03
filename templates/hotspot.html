@@ -1,4 +1,39 @@
-<!--Basic Hotspot
+<!--Basic Hotspot Component
+  This should be in a <script> tag within the <body> tag
+-->
+<script>
+  AFRAME.registerComponent('show-interaction-info-on-hover', {
+    schema: {
+      color: {
+        default: 'blue'
+      }
+    },
+
+    init: function () {
+      var self = this;
+      var scene = self.el.sceneEl;
+      var el = this.el;
+      var data = this.data;
+      var defaultColor = "blue";//el.getAttribute('material').color;
+      var box = el.querySelector('*');
+      var raycaster = scene.querySelector('a-cursor').components.raycaster;
+
+      el.addEventListener('mouseenter', function () {
+        el.setAttribute('color', data.color);
+        box.object3D.visible = true;
+        box.object3D.opacity = "1";
+      });
+
+      el.addEventListener('mouseleave', function () {
+        el.setAttribute('color', defaultColor);
+        box.object3D.visible = false;
+        box.object3D.opacity = "0";
+      });
+    }
+  });
+</script>
+
+<!--Basic Hotspot - Updating Values
     Hotspot with a sphere with numbered text in center.
     Nested child plane object which 'should' auto scale to the amount of text required.
 
