@@ -17,7 +17,7 @@ Here are the related files for each of the prototype interaction wireframes
 
 #### Wound Treatment
 - woundtreatment.html
-- XR Wireframe_WoundTreatment
+- XR Wireframe_WoundTreatment.png
 
 #### Diegetic Conversations
 
