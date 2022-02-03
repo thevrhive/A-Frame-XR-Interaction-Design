@@ -4,8 +4,8 @@
 Here are the related files for each of the prototype interaction wireframes
 
 ### Triage
-triage.html
-XR Wireframe_Triage03.png
+- triage.html
+- XR Wireframe_Triage03.png
 
 ### Patient Residence
 #### Holistic Assessment
@@ -15,8 +15,8 @@ XR Wireframe_Triage03.png
 #### Wound Assessment
 
 #### Wound Treatment
-woundtreatment.html
-XR Wireframe_WoundTreatment
+- woundtreatment.html
+- XR Wireframe_WoundTreatment
 
 #### Diegetic Conversations
 
