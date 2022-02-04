@@ -46,9 +46,12 @@
   <!--Basic Scene Setup-->
   <a-scene background="transparent:true">
     <a-assets>
-      <img id="VR_Wireframe" src="../wireframes\XR Wireframe_HolisticAssessment01.png">
+      <img id="VR_Wireframe" src="../wireframes/XR Wireframe_HolisticAssessment01.png">
     </a-assets>
     <a-sky src="#VR_Wireframe" rotation="0 270 0"></a-sky>
+
+  <!--Transition-->
+  <input type="" function="">
 
     <!--Camera/Cursor-->
     <a-camera position="0 0 0" fov="90">
@@ -69,16 +72,15 @@
       </a-box>
     </a-entity>
 
-    <a-entity id="hotspotNorthWest" position="-2.5 -1.5 8" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
+    <a-entity id="hotspotNorthWest" position="-0.5 -2.5 15" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
       <a-box show-interaction-info-on-hover="color: green" position="0 0 5" rotation="0 180 0" geometry="primitive: sphere; radius: 0.1"
           material="color: green; shader: flat;" event-set__enter="_event: mouseenter; color: lightgreen;"
           event-set__leave="_event: mouseleave; color: green" data-hoverable>
-        <a-box position="0 0.66 0" rotation="0 0 0" visible="false"
+        <a-box position="0 0.66 0" rotation="-67.5 67.5 0" scale="0.25 0.25 0.25" visible="false"
             geometry="primitive: plane; width: auto; height: auto" material="color: green; shader: flat;"
-            text="width: 2; value: Patient notes; color: white; align: center; wrapCount: 10; zOffset:0.2;">
+            text="width: 2; value: Patient notes; color: white; align: center; wrapCount: 10; zOffset:0.1;">
         </a-box>
       </a-box>
     </a-entity>
-
 </body>
 </html>

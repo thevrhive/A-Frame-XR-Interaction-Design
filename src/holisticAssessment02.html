@@ -58,7 +58,7 @@
     <!--Hotspots-->
 
  
-    <a-entity id="hotspotNorthEast" position="3.5 -1.5 8" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
+    <a-entity id="hotspotNorthEast" position="1.5 -1.5 8" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
       <a-box show-interaction-info-on-hover="color: red" position="0 0 5" rotation="0 180 0" geometry="primitive: sphere; radius: 0.1"
           material="color: green; shader: flat;" event-set__enter="_event: mouseenter; color: lightgreen;"
           event-set__leave="_event: mouseleave; color: green" data-hoverable>
@@ -69,7 +69,7 @@
       </a-box>
     </a-entity>
 
-    <a-entity id="hotspotNorthEast" position="1.5 -1.5 8" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
+    <a-entity id="hotspotNorthEast" position="3.5 -1.5 8" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
       <a-box show-interaction-info-on-hover="color: red" position="0 0 5" rotation="0 180 0" geometry="primitive: sphere; radius: 0.1"
           material="color: blue; shader: flat;" event-set__enter="_event: mouseenter; color: lightblue;"
           event-set__leave="_event: mouseleave; color: blue" data-hoverable>
@@ -79,6 +79,15 @@
         </a-box>
       </a-box>
     </a-entity>
+
+    <script>
+
+      document.addEventListener("keyup", myFunction);
+
+      function myFunction() {
+        window.open("holisticAssessment02.html", '_blank');
+      }
+    </script>
 
 </body>
 </html>
