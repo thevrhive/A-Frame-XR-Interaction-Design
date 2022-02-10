@@ -3,89 +3,23 @@
 
 <head>
   <meta charset="utf-8">
-  <title>XR Interaction Design Wireframe</title>
-  <meta name="description" content="360&deg; Image - A-Frame">
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+  <title>NurseXR Lo-Fi Paper Prototyping</title>
+  <meta charset="utf-8">
 </head>
 
 <body>
-  <!--Component Setup-->
-  <script>
-    AFRAME.registerComponent('show-interaction-info-on-hover', {
-      schema: {
-        color: {
-          default: 'blue'
-        }
-      },
-
-      init: function () {
-        var self = this;
-        var scene = self.el.sceneEl;
-        var el = this.el;
-        var data = this.data;
-        var defaultColor = "blue";//el.getAttribute('material').color;
-        var box = el.querySelector('*');
-        var raycaster = scene.querySelector('a-cursor').components.raycaster;
-
-        el.addEventListener('mouseenter', function () {
-          el.setAttribute('color', data.color);
-          box.object3D.visible = true;
-          box.object3D.opacity = "1";
-        });
-
-        el.addEventListener('mouseleave', function () {
-          el.setAttribute('color', defaultColor);
-          box.object3D.visible = false;
-          box.object3D.opacity = "0";
-        });
-      }
-    });
-  </script>
-
-  <!--Basic Scene Setup-->
-  <a-scene background="transparent:true">
-    <a-assets>
-      <img id="VR_Wireframe" src="">
-    </a-assets>
-    <a-sky src="#VR_Wireframe" rotation="0 270 0"></a-sky>
-
-    <!--Camera/Cursor-->
-    <a-camera position="0 0 0" fov="90">
-      <a-cursor raycaster="objects: [data-hoverable];"></a-cursor>
-    </a-camera>
-
-    <!--Hotspots-->
-    <a-entity id="hotspot1" position="5 0 -1" scale="3 3 3" text="value: 1; color: black; align: center; wrapCount: 40">
-      <a-box show-interaction-info-on-hover="color: red" geometry="primitive: sphere; radius: 0.5"
-          material="color: blue; shader: flat;" position="0 0 -5" event-set__enter="_event: mouseenter; color: lightblue;"
-          event-set__leave="_event: mouseleave; color: blue" data-hoverable>
-        <a-box position="0 1.5 0" rotation="0 -20 0" visible="false"
-            geometry="primitive: plane; width: auto; height: auto" material="color: blue; shader: flat;"
-            text="width: 4; value: This is some interaction information; color: black; align: center; wrapCount: 10; zOffset:0.2; ">
-        </a-box>
-      </a-box>
-    </a-entity>
-
-    <a-entity id="hotspot1" position="-5 0 -1" scale="3 3 3" text="value: 1; color: black; align: center; wrapCount: 40">
-      <a-box show-interaction-info-on-hover="color: red" geometry="primitive: sphere; radius: 0.5"
-          material="color: green; shader: flat;" position="0 0 -5" event-set__enter="_event: mouseenter; color: lightgreen;"
-          event-set__leave="_event: mouseleave; color: green" data-hoverable>
-        <a-box position="0 1.5 0"  rotation="0 20 0" visible="false"
-            geometry="primitive: plane; width: auto; height: auto" material="color: green; shader: flat;"
-            text="width: 4; value: Press space to change level; color: black; align: center; wrapCount: 10; zOffset:0.2;">
-        </a-box>
-      </a-box>
-    </a-entity>
-
-    <script>
-
-      document.addEventListener("keyup", myFunction);
-
-      function myFunction() {
-        window.open("triage.html");
-      }
-    </script>
-
+  <div>
+    <ul>
+      <li><a href="triage.html">Triage Room</a></li>
+      <li><a href="triage.html">Holistic Assessment 01</a></li>
+      <li><a href="triage.html">Holistic Assessment 02</a></li>
+      <li><a href="triage.html">Environment Assessment 01</a></li>
+      <li><a href="triage.html">Environment Assessment 02</a></li>
+      <li><a href="triage.html">Conversations</a></li>
+      <li><a href="triage.html">Wound Treatment</a></li>
+      <li><a href="triage.html">Triage Debrief</a></li>
+    </ul>
+  </div>
 </body>
+
 </html>
