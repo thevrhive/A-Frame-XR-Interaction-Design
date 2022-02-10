@@ -59,26 +59,57 @@
     </a-camera>
 
     <!--Hotspots-->
-
- 
-    <a-entity id="hotspotNorthEast" position="2.5 -1.5 8" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
-      <a-box show-interaction-info-on-hover="color: red" position="0 0 5" rotation="0 180 0" geometry="primitive: sphere; radius: 0.1"
-          material="color: blue; shader: flat;" event-set__enter="_event: mouseenter; color: lightblue;"
-          event-set__leave="_event: mouseleave; color: blue" data-hoverable>
+    <a-entity id="hotspotNorthUp" position="1 5 0" rotation="0 180 0" scale="3 3 3" text="value: ; color: orange; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: orange" position="0 0 5" rotation="0 180 0" geometry="primitive: sphere; radius: 0.1"
+          material="color: orange; shader: flat;" event-set__enter="_event: mouseenter; color: lightorange;"
+          event-set__leave="_event: mouseleave; color: orange" data-hoverable>
         <a-box position="0 0.33 0"                                        rotation="0 0 0" visible="false"
-            geometry="primitive: plane; width: auto; height: auto" material="color: blue; shader: flat;"
-            text="width: 2; value: Knock; color: white; align: center; wrapCount: 10; zOffset:0.2;">
+            geometry="primitive: plane; width: auto; height: auto" material="color: orange; shader: flat;"
+            text="width: 2; value: Assess Risk; color: white; align: center; wrapCount: 10; zOffset:0.2;">
         </a-box>
       </a-box>
     </a-entity>
 
-    <a-entity id="hotspotNorthWest" position="-0.5 -2.5 15" rotation="0 180 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
-      <a-box show-interaction-info-on-hover="color: green" position="0 0 5" rotation="0 180 0" geometry="primitive: sphere; radius: 0.1"
+    <a-entity id="hotspotNorthLeft" position="-5 0 0" rotation="0 180 0" scale="3 3 3" text="value: ; color: blue; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: blue" position="0 0 5" rotation="0 180 0" geometry="primitive: sphere; radius: 0.1"
+          material="color: blue; shader: flat;" event-set__enter="_event: mouseenter; color: lightblue;"
+          event-set__leave="_event: mouseleave; color: blue" data-hoverable>
+        <a-box position="0 0.33 0"                                        rotation="0 0 0" visible="false"
+            geometry="primitive: plane; width: auto; height: auto" material="color: blue; shader: flat;"
+            text="width: 2; value: Use Tablet; color: white; align: center; wrapCount: 10; zOffset:0.2;">
+        </a-box>
+      </a-box>
+    </a-entity>
+
+    <a-entity id="hotspotNorthRight" position="1.5 -1.5 0" rotation="0 180 0" scale="3 3 3" text="value: ; color: blue; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: blue" position="0 0 5" rotation="0 180 0" geometry="primitive: sphere; radius: 0.1"
+          material="color: blue; shader: flat;" event-set__enter="_event: mouseenter; color: lightblue;"
+          event-set__leave="_event: mouseleave; color: blue" data-hoverable>
+        <a-box position="0 0.5 0"                                        rotation="0 0 0" visible="false"
+            geometry="primitive: plane; width: auto; height: auto" material="color: blue; shader: flat;"
+            text="width: 2; value: Make Decision; color: white; align: center; wrapCount: 10; zOffset:0.2;">
+        </a-box>
+      </a-box>
+    </a-entity>
+
+    <a-entity id="hotspotEast" position="10 -10 -8" rotation="0 0 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: green" position="5 0 0" rotation="0 180 0" geometry="primitive: sphere; radius: 0.5"
           material="color: green; shader: flat;" event-set__enter="_event: mouseenter; color: lightgreen;"
           event-set__leave="_event: mouseleave; color: green" data-hoverable>
-        <a-box position="0 0.66 0" rotation="-67.5 67.5 0" scale="0.25 0.25 0.25" visible="false"
+        <a-box position="0 1.5 0" rotation="0 112.5 0" visible="false"
             geometry="primitive: plane; width: auto; height: auto" material="color: green; shader: flat;"
-            text="width: 2; value: Patient notes; color: white; align: center; wrapCount: 10; zOffset:0.1;">
+            text="width: 4; value: Patient Door Teleport Anchor; color: white; align: center; wrapCount: 10; zOffset:0.2;">
+        </a-box>
+      </a-box>
+    </a-entity>
+
+    <a-entity id="hotspotWest" position="-1 -12 0" rotation="0 0 0" scale="3 3 3" text="value: ; color: black; align: center; wrapCount: 40">
+      <a-box show-interaction-info-on-hover="color: green" position="-5 0 0" rotation="0 180 0" geometry="primitive: sphere; radius: 0.5"
+          material="color: green; shader: flat;" event-set__enter="_event: mouseenter; color: lightgreen;"
+          event-set__leave="_event: mouseleave; color: green" data-hoverable>
+        <a-box position="0 1.5 0" rotation="-22.5 270 0" visible="false"
+            geometry="primitive: plane; width: auto; height: auto" material="color: green; shader: flat;"
+            text="width: 4; value: Exit Teleport Anchor; color: white; align: center; wrapCount: 10; zOffset:0.2;">
         </a-box>
       </a-box>
     </a-entity>
